@@ -1,0 +1,10 @@
+-- Paladin Skill Spam
+while wait() do
+local args = {
+[1] = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("Combat"):WaitForChild("Skillsets"):WaitForChild("Paladin"):WaitForChild("Ultimate"):FireServer(unpack(args))
+game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("Combat"):WaitForChild("Skillsets"):WaitForChild("Paladin"):WaitForChild("GuildedLight"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("Combat"):WaitForChild("Skillsets"):WaitForChild("Paladin"):WaitForChild("Block"):FireServer()
+end
