@@ -1,0 +1,31 @@
+if game:GetService("Lighting"):FindFirstChild("Atmosphere") then
+    game:GetService("Lighting").Atmosphere:Destroy()
+end
+
+if game:GetService("Lighting"):FindFirstChild("Sky") then
+    game:GetService("Lighting").Sky:Destroy()
+end
+
+if game:GetService("Lighting"):FindFirstChild("SunRays") then
+    game:GetService("Lighting").SunRays:Destroy()
+end
+
+if game:GetService("Lighting"):FindFirstChild("RewardsBlurEffect") then
+    game:GetService("Lighting").RewardsBlurEffect:Destroy()
+end
+
+if game:GetService("Lighting"):FindFirstChild("ColorCorrection") then
+    game:GetService("Lighting").ColorCorrection:Destroy()
+end
+
+if game:GetService("Lighting"):FindFirstChild("Blur") then
+    game:GetService("Lighting").Blur:Destroy()
+end
+
+if game:GetService("Lighting"):FindFirstChild("Bloom") then
+    game:GetService("Lighting").Bloom:Destroy()
+end
+
+game.Lighting.EnvironmentDiffuseScale = 0
+game.Lighting.GlobalShadows = false
+game.Lighting.GeographicLatitude = 0
