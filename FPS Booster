@@ -1,0 +1,49 @@
+local modelNameSet = {
+    "Forcefield",
+    "RadialIndicator",
+    "BlastIndicator",
+    "MediumCrystal",
+    "TreeEntSpike",
+    "MeteorSpecialSuper",
+    "MeteorSpecialMedium",
+    "PoisonRings",
+    "PoisonMeteorSpecialMedium",
+    "PoisonMeteorSpecialSmall",
+    "PurpleMeteorSpecialMedium",
+    "GuardianSwordPrisonSwordPurple",
+    "PurpleMeteorSpecialBig",
+    "BigLavaSpikeRingPurple",
+    "Deathball",
+    "ConeIndicator",
+    "SandWhirlpool",
+    "Shockball"
+}
+ 
+local function destroyModelsByName(name)
+    for _, model in ipairs(workspace:GetChildren()) do
+        if model:IsA("Model") and model.Name == name then
+            model:Destroy()
+        end
+    end
+end
+ 
+while true do
+    wait()
+    for _, modelName in ipairs(modelNameSet) do
+        destroyModelsByName(modelName)
+    end
+end
+ 
+-- Paladin Skill Spam
+while true do
+    wait()
+    local args = {
+        [1] = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+    }
+ 
+    local skillsets = game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("Combat"):WaitForChild("Skillsets")
+    local paladin = skillsets:WaitForChild("Paladin")
+    paladin.Ultimate:FireServer(unpack(args))
+    paladin.GuildedLight:FireServer()
+    paladin.Block:FireServer()
+end
